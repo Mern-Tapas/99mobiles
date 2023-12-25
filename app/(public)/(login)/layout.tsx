@@ -6,14 +6,10 @@ function layout({ children }: { children: React.ReactNode }) {
 
     return (
         <div className='min-h-screen bg-[#f9f9ff] dark:bg-gray-900'>
-           <Header className=""/>
-
+            <Header className="" />
             <div>
                 {children}
             </div>
-
-
-
         </div >
     )
 }

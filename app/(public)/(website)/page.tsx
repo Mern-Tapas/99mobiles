@@ -5,7 +5,7 @@ function page() {
   return (
    <div>
     <MaxWScreenXl className='mt-2'>
-
+      website content
     </MaxWScreenXl>
    </div>
   )
