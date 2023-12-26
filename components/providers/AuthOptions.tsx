@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useTransition } from 'react'
 import { getProviders, signIn } from 'next-auth/react'
+import { redirect } from 'next/dist/server/api-utils'
 
 function AuthOptions() {
 

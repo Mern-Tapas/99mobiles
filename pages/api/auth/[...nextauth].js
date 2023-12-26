@@ -12,11 +12,6 @@ export const authOptions = {
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET
         }),
-
-        FacebookProvider({
-            clientId: process.env.FACEBOOK_CLIENT_ID,
-            clientSecret: process.env.FACEBOOK_CLIENT_SECRET
-        }),
         CredentialsProvider({
             // The name to display on the sign in form (e.g. "Sign in with...")
             name: "Credentials",
@@ -30,22 +25,22 @@ export const authOptions = {
             },
             async authorize(credentials, req, res) {
                 // Add logic here to look up the user from the credentials supplied
-                await connection()
-                const { username, password } = credentials
+                // await connection()
+                // const { username, password } = credentials
 
-                const user = await userModel.findOne({ username })
+                // const user = await userModel.findOne({ username })
 
-                if (user) {
+                // if (user) {
 
-                    if (user.username === username && user.password === password) {
-                        return user
-                    } else {
-                        throw new Error("Invalid User Id or Password")
-                    }
+                //     if (user.username === username && user.password === password) {
+                //         return user
+                //     } else {
+                //         throw new Error("Invalid User Id or Password")
+                //     }
 
-                } else {
-                    throw new Error("you are not registerd")
-                }
+                // } else {
+                //     throw new Error("you are not registerd")
+                // }
 
                 // return user
 
@@ -56,27 +51,28 @@ export const authOptions = {
     callbacks: {
         async signIn({ user, account, profile, credentials }) {
 
-            await connection()
-            const { id, name, email, image } = user
+            // await connection()
+            // const { id, name, email, image } = user
 
-            user = await userModel.findOne({ email })
+            // user = await userModel.findOne({ email })
 
-            if (user) {
+            // if (user) {
 
-                return user
+            //     return user
 
-            } else {
+            // } else {
 
 
-                try {
-                    const newUser = new userModel({ id, name, email, image, password: "password", usertype: "user" })
-                    await newUser.save()
-                    return true
-                } catch (error) {
+            //     try {
+            //         const newUser = new userModel({ id, name, email, image, password: "password", usertype: "user" })
+            //         await newUser.save()
+            //         return true
+            //     } catch (error) {
 
-                }
+            //     }
 
-            }
+            // }
+            console.log(user)
 
         },
         // async redirect({ url, baseUrl }) {

@@ -5,11 +5,14 @@ import MaxWScreenXl from '@/components/MaxWScreenXl'
 import Link from 'next/link'
 import Heading from '@/components/typographi/Heading'
 import { Button } from "@/components/ui/button"
-
+import { useSession } from 'next-auth/react'
 
 
 
 function Header({ className }: { className: React.ReactNode }) {
+
+    const { data: session, status } = useSession()
+
     return (
         <>
             <DivPrimary className={`${className} `}>
@@ -20,14 +23,18 @@ function Header({ className }: { className: React.ReactNode }) {
                     <div>
 
                     </div>
-                    <div>
-                        <Link href="register">
-                            <Button className='me-2' variant="outline">Register</Button>
-                        </Link>
-                        <Link href="login">
-                            <Button >Login</Button>
-                        </Link>
-                    </div>
+
+                    {session ?
+                        <h1>{session?.user?.name}</h1>
+                        :
+                        <div>
+                            <Link href="register">
+                                <Button className='me-2' variant="outline">Register</Button>
+                            </Link>
+                            <Link href="login">
+                                <Button >Login</Button>
+                            </Link>
+                        </div>}
                 </MaxWScreenXl>
             </DivPrimary>
         </>
