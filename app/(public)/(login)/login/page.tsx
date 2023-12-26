@@ -1,9 +1,12 @@
+import AuthOptions from '@/components/providers/AuthOptions'
 import React from 'react'
 
 function page() {
 
     return (
-        <div></div>
+        <div className=''>
+            <AuthOptions />
+        </div>
     )
 }
 
