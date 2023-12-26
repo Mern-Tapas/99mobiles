@@ -1,6 +1,5 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
-import FacebookProvider from 'next-auth/providers/facebook'
 import CredentialsProvider from "next-auth/providers/credentials";
 
 
@@ -73,6 +72,7 @@ export const authOptions = {
 
             // }
             console.log(user)
+            return user
 
         },
         // async redirect({ url, baseUrl }) {
@@ -82,18 +82,19 @@ export const authOptions = {
         //     return session
         // },
         async jwt({ token, user, account, profile, isNewUser }) {
-            await connection()
-            const checkUser = await userModel.findOne({ email: token.email })
+            // await connection()
+            // const checkUser = await userModel.findOne({ email: token.email })
 
-            if (checkUser?.usertype === "admin") {
-                token.role = "admin"
-                return token
-            } else {
+            // if (checkUser?.usertype === "admin") {
+            //     token.role = "admin"
+            //     return token
+            // } else {
 
-                token.role = "user"
-                token.status = checkUser.status
-                return token
-            }
+            //     token.role = "user"
+            //     token.status = checkUser.status
+            //     return token
+            // }
+            return token
 
         }
     },
