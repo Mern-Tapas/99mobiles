@@ -1,7 +1,5 @@
 'use client'
-import React, { useState, useTransition } from 'react'
-import { getProviders, signIn, signOut } from 'next-auth/react'
-import { redirect } from 'next/dist/server/api-utils'
+import {  signIn, signOut } from 'next-auth/react'
 
 function AuthOptions() {
 
