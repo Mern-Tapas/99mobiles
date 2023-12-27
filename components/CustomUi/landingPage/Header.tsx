@@ -6,8 +6,7 @@ import Link from 'next/link'
 import Heading from '@/components/typographi/Heading'
 import { Button } from "@/components/ui/button"
 import { useSession } from 'next-auth/react'
-
-
+import Image from 'next/image'
 
 function Header({ className }: { className: React.ReactNode }) {
 
@@ -16,7 +15,7 @@ function Header({ className }: { className: React.ReactNode }) {
     return (
         <>
             <DivPrimary className={`${className} `}>
-                <MaxWScreenXl className="flex justify-between items-center">
+                <MaxWScreenXl className="flex justify-between items-center h-[60px]">
                     <div>
                         <Heading className="font-bold"><Link href={'/'}>Company Name</Link></Heading>
                     </div>
@@ -25,7 +24,17 @@ function Header({ className }: { className: React.ReactNode }) {
                     </div>
 
                     {session ?
-                        <h1>{session?.user?.name}</h1>
+                        <div className='flex items-center'>
+                            <p className='me-3'>{session?.user?.name}</p>
+
+                            <div className="avatar h-[40px] w-[40px] rounded-full overflow-hidden">
+                                {session?.user?.image ?
+                                    <Image alt='profile image' src={session?.user?.image || ""} height={100} width={100} />
+                                    : ""
+                                }
+                            </div>
+                        </div>
+
                         :
                         <div>
                             <Link href="register">
