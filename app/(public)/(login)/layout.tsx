@@ -7,7 +7,7 @@ function layout({ children }: { children: React.ReactNode }) {
     return (
         <div className='min-h-screen bg-[#f9f9ff] dark:bg-gray-900'>
             <Header className="sticky top-0" />
-            <div className='h-[100%] border'>
+            <div className='bg-pink-100'>
                 {children}
             </div>
         </div >
