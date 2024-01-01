@@ -24,7 +24,7 @@ function AuthOptions({ className }: { className: string }) {
             <div className='h-[25px] w-[25px] me-auto'>
               <GoogleIcon className="h-full w-full" />
             </div>
-            <h3 className='absolute font-bold left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]'>Continue with Google</h3>
+            <h3 className='absolute font-bold left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-sm xl:text-md'>Continue with Google</h3>
           </button>
         </div>
 
