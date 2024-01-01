@@ -63,7 +63,7 @@ export const authOptions = {
 
 
             //     try {
-            //         const newUser = new userModel({ id, name, email, image, password: "password", usertype: "user" })
+            //         const newUser = new userModel({ id, name, email, image, password: "password", userType: "user" })
             //         await newUser.save()
             //         return true
             //     } catch (error) {
@@ -71,7 +71,7 @@ export const authOptions = {
             //     }
 
             // }
-            console.log(user)
+            // console.log(user)
             return user
 
         },

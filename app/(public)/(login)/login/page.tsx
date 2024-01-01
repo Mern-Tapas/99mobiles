@@ -4,8 +4,8 @@ import React from 'react'
 function page() {
 
     return (
-        <div className=''>
-            <AuthOptions />
+        <div className='m-auto flex'>
+            <AuthOptions className="" />
         </div>
     )
 }
