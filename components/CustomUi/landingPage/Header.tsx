@@ -24,12 +24,12 @@ function Header({ className }: { className: React.ReactNode }) {
                     </div>
 
                     {session ?
-                        <div className='flex items-center'>
-                            <p className='me-3 text-sm'>{session?.user?.name}</p>
+                        <div className='flex items-center bg-gray-100 p-1  ps-4 rounded-full'>
+                            <p className='me-3 text-sm capitalize'>{session?.user?.name}</p>
 
-                            <button className="focus:border  p-1 h-[37px] w-[37px] rounded-full overflow-hidden">
+                            <button className="object-cover border h-[37px] w-[37px] rounded-full overflow-hidden bg-pink-50">
                                 {session?.user?.image ?
-                                    <Image alt='profile image' src={session?.user?.image || ""} height={100} width={100} />
+                                    <Image alt='profile image' className='h-full w-full' src={session?.user?.image || ""} height={200} width={200} />
                                     : ""
                                 }
                             </button>

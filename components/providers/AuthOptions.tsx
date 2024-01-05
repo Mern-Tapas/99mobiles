@@ -16,7 +16,7 @@ function AuthOptions({ className }: { className: string }) {
       <DivPrimary className='p-6 w-full rounded'>
 
         <div className='mb-3'>
-          <h2 className='text-xl font-bold poppins text-center mb-3 '>Admin Login</h2>
+          <h2 className='text-xl font-bold poppins text-center mb-3 '>Login</h2>
           <p className='text-center text-slate-400 text-sm'>Hey, Enter Your details to get sing in to your account</p>
         </div>
 
@@ -40,7 +40,7 @@ function AuthOptions({ className }: { className: string }) {
           </div>
           <div className='flex flex-col mb-2 text-sm' >
             <span className='text-slate-400 mb-2 text-sm'>Password</span>
-            <input type="email" placeholder='Enter your password' className='border rounded w-full p-3' />
+            <input type="password" placeholder='Enter your password' className='border rounded w-full p-3' />
           </div>
         </div>
 
