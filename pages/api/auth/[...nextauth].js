@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-
+import connectToDb from "@/utils/db";
 
 export const authOptions = {
     // Configure one or more authentication providers
@@ -50,6 +50,7 @@ export const authOptions = {
     callbacks: {
         async signIn({ user, account, profile, credentials }) {
 
+            await connectToDb()
             // await connection()
             // const { id, name, email, image } = user
 

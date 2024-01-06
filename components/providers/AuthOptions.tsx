@@ -46,6 +46,7 @@ function AuthOptions({ className }: { className: string }) {
 
         <div className='mb-3 text-sm'>
           <button className='p-3 text-center bg-black text-white rounded w-full'>Login</button>
+          {/* <button onClick={()=>{signOut()}} className='p-3 text-center bg-black text-white rounded w-full'>logout</button> */}
         </div>
 
         <div className=''>
