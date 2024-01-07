@@ -72,8 +72,6 @@ export const authOptions = {
                 }
 
             }
-            console.log(user)
-            return user
 
         },
         // async redirect({ url, baseUrl }) {
