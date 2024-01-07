@@ -2,6 +2,7 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import connectToDb from "@/utils/db";
+import userModel from "@/utils/schema/usermodel";
 
 export const authOptions = {
     // Configure one or more authentication providers
@@ -51,28 +52,27 @@ export const authOptions = {
         async signIn({ user, account, profile, credentials }) {
 
             await connectToDb()
-            // await connection()
-            // const { id, name, email, image } = user
+            const { id, name, email, image } = user
 
-            // user = await userModel.findOne({ email })
+            user = await userModel.findOne({ email })
 
-            // if (user) {
+            if (user) {
 
-            //     return user
+                return user
 
-            // } else {
+            } else {
 
 
-            //     try {
-            //         const newUser = new userModel({ id, name, email, image, password: "password", userType: "user" })
-            //         await newUser.save()
-            //         return true
-            //     } catch (error) {
+                try {
+                    const newUser = new userModel({ id, name, email, image, password: "password", userType: "user" })
+                    await newUser.save()
+                    return true
+                } catch (error) {
 
-            //     }
+                }
 
-            // }
-            // console.log(user)
+            }
+            console.log(user)
             return user
 
         },

@@ -37,9 +37,9 @@ function Header({ className }: { className: React.ReactNode }) {
                                 </div>
                                 <div className='group-hover:block group hidden  right-0 top-0 z-20  absolute'>
                                     <DivPrimary className='w-[210px] p-1 rounded mt-12 shadow-lg'>
-                                        <Link className='capitalize p-2 block w-full text-xs rounded mb-1 hover:bg-gray-50 text-left' href={"profile"}>profile</Link>
-                                        <Link className='capitalize p-2 block w-full text-xs rounded mb-1 hover:bg-gray-50 text-left' href={"account"}>account</Link>
-                                        <button className='text-xs  p-2 w-full rounded bg-red-600 text-white hover:bg-red-700 text-left' onClick={() => { signOut() }}>Logout</button>
+                                        <Link className='capitalize p-3 block w-full text-xs rounded mb-1 hover:bg-gray-50 text-left' href={"profile"}>profile</Link>
+                                        <Link className='capitalize p-3 block w-full text-xs rounded mb-1 hover:bg-gray-50 text-left' href={"account"}>account</Link>
+                                        <button className='text-xs  p-3 w-full rounded bg-red-600 text-white hover:bg-red-700 text-left' onClick={() => { signOut() }}>Logout</button>
                                     </DivPrimary>
                                 </div>
 
