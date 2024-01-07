@@ -56,24 +56,23 @@ export const authOptions = {
 
             user = await userModel.findOne({ email })
 
-            // if (user) {
+            if (user) {
 
-            //     return user
+                return user
 
-            // } else {
+            } else {
 
 
-            //     try {
-            //         const newUser = new userModel({ id, name, email, image, password: "password", userType: "user" })
-            //         await newUser.save()
-            //         return true
-            //     } catch (error) {
+                try {
+                    const newUser = new userModel({ id, name, email, image, password: "password", userType: "user" })
+                    await newUser.save()
+                    return true
+                } catch (error) {
 
-            //     }
+                }
 
-            // }
+            }
 
-            return true
 
         },
         // async redirect({ url, baseUrl }) {
