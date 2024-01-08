@@ -30,10 +30,6 @@ export const authOptions = {
                 const { username, password } = credentials
                 const user = await userModel.findOne({ email: username })
                 // console.log(user)
-                console.log(username)
-                console.log(password)
-                console.log(user)
-
 
                 if (user) {
 

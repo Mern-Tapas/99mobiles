@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/splider/splide.min.css" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute='class'>
+        <ThemeProvider attribute='clas'>
           <Provider>
             {children}
           </Provider>
