@@ -25,24 +25,28 @@ export const authOptions = {
             },
             async authorize(credentials, req, res) {
                 // Add logic here to look up the user from the credentials supplied
-                // await connection()
-                // const { username, password } = credentials
+                await connectToDb()
 
-                // const user = await userModel.findOne({ username })
+                const { username, password } = credentials
+                const user = await userModel.findOne({ email: username })
+                // console.log(user)
+                console.log(username)
+                console.log(password)
+                console.log(user)
 
-                // if (user) {
 
-                //     if (user.username === username && user.password === password) {
-                //         return user
-                //     } else {
-                //         throw new Error("Invalid User Id or Password")
-                //     }
+                if (user) {
 
-                // } else {
-                //     throw new Error("you are not registerd")
-                // }
+                    if (user.email === username && user.password === password) {
+                        return user
+                    } else {
+                        throw new Error("Invalid User Id or Password")
+                    }
 
-                // return user
+                } else {
+                    throw new Error("you are not registerd")
+                }
+
 
             }
         })
