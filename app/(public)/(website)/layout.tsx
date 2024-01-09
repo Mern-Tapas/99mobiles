@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import Header from '@/components/CustomUi/landingPage/Header'
 import HeaderLinks from '@/components/CustomUi/landingPage/HeaderLinks'

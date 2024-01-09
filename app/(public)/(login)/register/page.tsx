@@ -1,8 +1,12 @@
+import AuthOptions from '@/components/providers/AuthOptions'
 import React from 'react'
 
 function page() {
+
     return (
-        <div>Register page</div>
+        <div className='m-auto flex'>
+            <AuthOptions className="" />
+        </div>
     )
 }
 
