@@ -6,15 +6,19 @@ export default withAuth(
     function middleware(req) {
 
 
-        if (req.nextUrl.pathname.startsWith("/dashboard") && req.nextauth.token?.role !== "admin") {
+        if (req.nextUrl.pathname.startsWith("/admin") && req.nextauth.token?.role !== "admin") {
+            console.log("log1")
             return new NextResponse("you are not authorised")
         } else {
 
         }
+
+        
     },
     {
         callbacks: {
             authorized: ({ token }) => {
+                console.log(token)
                 return token
             },
 
@@ -24,4 +28,4 @@ export default withAuth(
 
 
 
-export const config = { matcher: ['/dashboard/:path*', '/account/:path*'] }  
+export const config = { matcher: ['/admin/:path*', '/user/:path*'] }  

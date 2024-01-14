@@ -82,19 +82,18 @@ export const authOptions = {
         //     return session
         // },
         async jwt({ token, user, account, profile, isNewUser }) {
-            // await connection()
-            // const checkUser = await userModel.findOne({ email: token.email })
+            await connectToDb()
+            const checkUser = await userModel.findOne({ email: token.email })
 
-            // if (checkUser?.usertype === "admin") {
-            //     token.role = "admin"
-            //     return token
-            // } else {
+            if (checkUser?.usertype === "admin") {
+                token.role = "admin"
+                return token
+            } else {
 
-            //     token.role = "user"
-            //     token.status = checkUser.status
-            //     return token
-            // }
-            return token
+                token.role = "user"
+                token.status = checkUser.status
+                return token
+            }
 
         }
     },
