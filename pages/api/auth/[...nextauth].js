@@ -64,9 +64,11 @@ export const authOptions = {
 
 
                 try {
+
                     const newUser = new userModel({ id, name, email, image, password: "password", userType: "user" })
                     await newUser.save()
                     return true
+
                 } catch (error) {
 
                 }
@@ -75,9 +77,9 @@ export const authOptions = {
 
 
         },
-        // async redirect({ url, baseUrl }) {
-        //     return baseUrl
-        // },
+        async redirect({ url, baseUrl }) {
+            return baseUrl
+        },
         // async session({ session, user, token }) {
         //     return session
         // },
@@ -85,7 +87,7 @@ export const authOptions = {
             await connectToDb()
             const checkUser = await userModel.findOne({ email: token.email })
 
-            if (checkUser?.usertype === "admin") {
+            if (checkUser?.userType === "admin") {
                 token.role = "admin"
                 return token
             } else {
