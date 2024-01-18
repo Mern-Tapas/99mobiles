@@ -58,6 +58,11 @@ export const authOptions = {
 
             if (user) {
 
+                await userModel.findOneAndUpdate({ email }, { name, image }).then((res) => {
+                    console.log('profile image updated from google')
+                }).catch((error) => {
+                    console.log(`nextauth.js = not updated auth details ${error}`)
+                })
                 return user
 
             } else {
@@ -77,9 +82,9 @@ export const authOptions = {
 
 
         },
-        async redirect({ url, baseUrl }) {
-            return baseUrl
-        },
+        // async redirect({ url, baseUrl }) {
+        //     return `${baseUrl}/admin`
+        // },
         // async session({ session, user, token }) {
         //     return session
         // },

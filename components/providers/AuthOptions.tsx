@@ -26,11 +26,14 @@ function AuthOptions({ className }: { className: string }) {
 
   }
 
+  const [loading, setLoading] = useState(false)
+
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
-    const result = await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' })
-    console.log(result)
+    setLoading(true)
+    const response = await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' })
+    setLoading(false)
   }
 
 
@@ -71,7 +74,11 @@ function AuthOptions({ className }: { className: string }) {
           </div>
 
           <div className='mb-3 text-sm'>
-            <button className='p-3 text-center bg-gray-950 hover:bg-gray-800 text-white rounded w-full' >Login</button>
+            <button className='p-3 capitalize text-center bg-gray-950 hover:bg-gray-800 text-white rounded w-full' >
+              {loading ? "loading..." :
+               "login"
+               }
+            </button>
             {/* <button onClick={()=>{signOut()}} className='p-3 text-center bg-black text-white rounded w-full'>logout</button> */}
           </div>
 
