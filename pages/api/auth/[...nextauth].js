@@ -57,7 +57,6 @@ export const authOptions = {
             user = await userModel.findOne({ email })
 
             if (user) {
-
                 await userModel.findOneAndUpdate({ email }, { name, image }).then((res) => {
                     console.log('profile image updated from google')
                 }).catch((error) => {
@@ -82,9 +81,9 @@ export const authOptions = {
 
 
         },
-        // async redirect({ url, baseUrl }) {
-        //     return `${baseUrl}/admin`
-        // },
+        async redirect({ url, baseUrl }) {
+            return `${baseUrl}/admin`
+        },
         // async session({ session, user, token }) {
         //     return session
         // },

@@ -5,6 +5,7 @@ import DivPrimary from '../DivPrimary'
 import GoogleIcon from '@/public/icons/google.svg'
 import Link from 'next/link'
 import { EventHandler, FormEvent, useState } from 'react'
+import { redirect } from 'next/navigation'
 
 function AuthOptions({ className }: { className: string }) {
 
@@ -32,7 +33,7 @@ function AuthOptions({ className }: { className: string }) {
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    const response = await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' })
+    const response = await signIn("credentials", { username: credential.username, password: credential.password, redirect: true, callbackUrl: '/' })
     setLoading(false)
   }
 
@@ -41,7 +42,6 @@ function AuthOptions({ className }: { className: string }) {
     <DivPrimary className={`${className} transition-all	 ${session ? "" : ""} lg:w-[370px] w-[350px] `}>
       <DivPrimary className='p-6 w-full rounded'>
 
-        <form onSubmit={handleLogin} >
 
 
           <div className='mb-3'>
@@ -61,6 +61,7 @@ function AuthOptions({ className }: { className: string }) {
           <div className='mb-3'>
             <p className='text-center'>or</p>
           </div>
+          <form onSubmit={handleLogin} >
 
           <div className='mb-3'>
             <div className='flex flex-col mb-2 text-sm' >
@@ -76,8 +77,8 @@ function AuthOptions({ className }: { className: string }) {
           <div className='mb-3 text-sm'>
             <button className='p-3 capitalize text-center bg-gray-950 hover:bg-gray-800 text-white rounded w-full' >
               {loading ? "loading..." :
-               "login"
-               }
+                "login"
+              }
             </button>
             {/* <button onClick={()=>{signOut()}} className='p-3 text-center bg-black text-white rounded w-full'>logout</button> */}
           </div>
