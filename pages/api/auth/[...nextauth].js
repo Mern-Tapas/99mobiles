@@ -82,7 +82,7 @@ export const authOptions = {
 
         },
         async redirect({ url, baseUrl }) {
-            return `${baseUrl}/admin`
+            return `${baseUrl}`
         },
         // async session({ session, user, token }) {
         //     return session

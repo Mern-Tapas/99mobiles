@@ -4,11 +4,12 @@ import { useSession } from 'next-auth/react'
 import DivPrimary from '../DivPrimary'
 import GoogleIcon from '@/public/icons/google.svg'
 import Link from 'next/link'
-import { EventHandler, FormEvent, useState } from 'react'
+import { EventHandler, FormEvent, useEffect, useState } from 'react'
 import { redirect } from 'next/navigation'
 
 function AuthOptions({ className }: { className: string }) {
 
+  const [loading, setLoading] = useState(false)
 
   const { data: session, status } = useSession()
 
@@ -27,15 +28,25 @@ function AuthOptions({ className }: { className: string }) {
 
   }
 
-  const [loading, setLoading] = useState(false)
 
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    const response = await signIn("credentials", { username: credential.username, password: credential.password, redirect: true, callbackUrl: '/' })
+    const response = await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' })
     setLoading(false)
   }
+
+
+  useEffect(() => {
+
+    if (session) {
+
+    } else {
+
+    }
+
+  }, [session])
 
 
   return (
@@ -44,24 +55,24 @@ function AuthOptions({ className }: { className: string }) {
 
 
 
-          <div className='mb-3'>
-            <h2 className='text-xl font-bold poppins text-center mb-3 '>Login</h2>
-            <p className='text-center text-slate-400 text-sm'>Hey, Enter Your details to get sing in to your account</p>
-          </div>
+        <div className='mb-3'>
+          <h2 className='text-xl font-bold poppins text-center mb-3 '>Login</h2>
+          <p className='text-center text-slate-400 text-sm'>Hey, Enter Your details to get sing in to your account</p>
+        </div>
 
-          <div className='mb-3'>
-            <button className='border flex w-full p-3 rounded relative' onClick={() => { signIn("google") }}>
-              <div className='h-[20px] w-[20px] me-auto'>
-                <GoogleIcon className="h-full w-full" />
-              </div>
-              <h3 className='absolute font-bold left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-sm xl:text-md'>Continue with Google</h3>
-            </button>
-          </div>
+        <div className='mb-3'>
+          <button className='border flex w-full p-3 rounded relative' onClick={() => { signIn("google") }}>
+            <div className='h-[20px] w-[20px] me-auto'>
+              <GoogleIcon className="h-full w-full" />
+            </div>
+            <h3 className='absolute font-bold left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-sm xl:text-md'>Continue with Google</h3>
+          </button>
+        </div>
 
-          <div className='mb-3'>
-            <p className='text-center'>or</p>
-          </div>
-          <form onSubmit={handleLogin} >
+        <div className='mb-3'>
+          <p className='text-center'>or</p>
+        </div>
+        <form onSubmit={handleLogin} >
 
           <div className='mb-3'>
             <div className='flex flex-col mb-2 text-sm' >
