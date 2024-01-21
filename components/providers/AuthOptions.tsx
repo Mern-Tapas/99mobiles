@@ -6,12 +6,15 @@ import GoogleIcon from '@/public/icons/google.svg'
 import Link from 'next/link'
 import { EventHandler, FormEvent, useEffect, useState } from 'react'
 import { redirect } from 'next/navigation'
+import { useToast } from "@/components/ui/use-toast"
 
 function AuthOptions({ className }: { className: string }) {
 
   const [loading, setLoading] = useState(false)
 
   const { data: session, status } = useSession()
+
+  const { toast } = useToast()
 
   const [credential, setcCredential] = useState({
     username: "",
@@ -36,8 +39,17 @@ function AuthOptions({ className }: { className: string }) {
     await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' }).then((res) => {
       console.log(res)
 
+      if (res?.error) {
+        toast({
+          variant: "destructive",
+          title: "Login failed",
+          description: res.error,
+        })
+      }
+
     }).catch((error) => {
-      console.log(error)
+
+
     })
     setLoading(false)
   }
@@ -99,10 +111,10 @@ function AuthOptions({ className }: { className: string }) {
             {/* <button onClick={()=>{signOut()}} className='p-3 text-center bg-black text-white rounded w-full'>logout</button> */}
           </div>
 
-          <div className=''>
-            <Link href='/reset' className='text-sm text-blue-600'>Reset Your Password</Link>
-          </div>
         </form>
+        <div className=''>
+          <Link href='/reset' className='text-sm text-blue-600'>Reset Your Password</Link>
+        </div>
 
       </DivPrimary>
     </DivPrimary>
