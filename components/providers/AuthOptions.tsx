@@ -33,7 +33,12 @@ function AuthOptions({ className }: { className: string }) {
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    const response = await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' })
+    await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' }).then((res) => {
+      console.log(res)
+
+    }).catch((error) => {
+      console.log(error)
+    })
     setLoading(false)
   }
 
@@ -41,7 +46,7 @@ function AuthOptions({ className }: { className: string }) {
   useEffect(() => {
 
     if (session) {
-
+      redirect('/admin')
     } else {
 
     }
