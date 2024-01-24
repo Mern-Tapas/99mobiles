@@ -37,6 +37,7 @@ function AuthOptions({ className }: { className: string }) {
     e.preventDefault()
     setLoading(true)
     await signIn("credentials", { username: credential.username, password: credential.password, redirect: false, callbackUrl: '/' }).then((res) => {
+
       console.log(res)
 
       if (res?.error) {
@@ -56,9 +57,8 @@ function AuthOptions({ className }: { className: string }) {
 
 
   useEffect(() => {
-
     if (session) {
-      redirect('/admin')
+      redirect(`/user`)
     } else {
 
     }

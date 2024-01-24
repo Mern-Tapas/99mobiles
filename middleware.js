@@ -1,5 +1,5 @@
 import { withAuth } from "next-auth/middleware"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
 export default withAuth(
     //      `withAuth` augments your `Request` with the user's token.
@@ -7,18 +7,17 @@ export default withAuth(
 
 
         if (req.nextUrl.pathname.startsWith("/admin") && req.nextauth.token?.role !== "admin") {
-            console.log("log1")
             return new NextResponse("you are not authorised")
-        } else {
-
-        }
+        } 
+        if (req.nextUrl.pathname.startsWith("/user") && req.nextauth.token?.role !== "user") {
+            return new NextResponse("you are not authorised")
+        } 
 
         
     },
     {
         callbacks: {
             authorized: ({ token }) => {
-                console.log(token)
                 return token
             },
 

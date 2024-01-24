@@ -3,6 +3,8 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import connectToDb from "@/utils/db";
 import userModel from "@/utils/schema/usermodel";
+import { Session, Awaitable, Account, User } from "next-auth";
+import { NextResponse, NextRequest } from "next/server";
 
 export const authOptions = {
     // Configure one or more authentication providers
@@ -36,11 +38,11 @@ export const authOptions = {
                     if (user.email === username && user.password === password) {
                         return user
                     } else {
-                        throw new Error("Invalid User Id or Password")
+                        throw new Error("Please Enter Correct Details")
                     }
 
                 } else {
-                    throw new Error("you are not registerd")
+                    throw new Error("Please Enter Correct Details")
                 }
 
 
@@ -81,13 +83,15 @@ export const authOptions = {
 
 
         },
-        async redirect({ url, baseUrl }) {
-            return `${baseUrl}`
-        },
-        // async session({ session, user, token }) {
-        //     return session
+        // async redirect({ url, baseUrl }) {
+        //     return `${baseUrl}`
         // },
-        async jwt({ token, user, account, profile, isNewUser }) {
+        async session({ session, user, token }) {
+            session.role = token.role
+            return session
+
+        },
+        async jwt({ token, user, account, profile }) {
             await connectToDb()
             const checkUser = await userModel.findOne({ email: token.email })
 
