@@ -13,6 +13,7 @@ function HeaderLinks() {
                     <li className='text-slate-500 inline-block me-6 text-sm hover:text-slate-900'><Link href={''}>Laptops</Link></li>
                     <li className='text-slate-500 inline-block me-6 text-sm hover:text-slate-900'><Link href={''}>Smart Phone</Link></li>
                     <li className='text-slate-500 inline-block me-6 text-sm hover:text-slate-900'><Link href={''}>Accesorries</Link></li>
+                    <li className='text-slate-500 inline-block me-6 text-sm hover:text-slate-900'><Link href={'/admin'}>admin</Link></li>
                 </ul>
             </MaxWScreenXl>
         </DivPrimary>

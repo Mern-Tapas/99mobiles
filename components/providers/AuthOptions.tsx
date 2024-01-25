@@ -58,7 +58,7 @@ function AuthOptions({ className }: { className: string }) {
 
   useEffect(() => {
     if (session) {
-      redirect(`/user`)
+      redirect(`/`)
     } else {
 
     }
