@@ -2,7 +2,10 @@ import React from 'react'
 
 function page() {
   return (
-    <div>
+    <div className=''>
+      <div className='border p-6'>
+
+      </div>
 
     </div>
   )
