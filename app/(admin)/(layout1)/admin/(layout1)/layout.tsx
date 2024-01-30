@@ -1,6 +1,5 @@
 import AdminSidebar from '@/components/CustomUi/admin/AdminSidebar'
 import AdminTopBar from '@/components/CustomUi/admin/AdminTopBar'
-import DivPrimary from '@/components/DivPrimary'
 import React from 'react'
 
 function layout({ children }: { children: React.ReactNode }) {

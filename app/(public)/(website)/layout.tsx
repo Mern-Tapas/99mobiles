@@ -1,4 +1,3 @@
-'use client'
 import React, { useEffect, useState } from 'react'
 import Header from '@/components/CustomUi/landingPage/Header'
 import HeaderLinks from '@/components/CustomUi/landingPage/HeaderLinks'
@@ -6,14 +5,6 @@ import Footer from '@/components/CustomUi/landingPage/Footer'
 
 function layout({ children }: { children: React.ReactNode }) {
 
-    const [sidebar, setSidebar] = useState()
-
-    useEffect(() => {
-
-        const sidebarState = localStorage.getItem("sidebar")
-        console.log(setSidebar)
-
-    }, [])
 
     return (
         <>
