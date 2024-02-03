@@ -14,9 +14,7 @@ import NotificationIcon from '@/public/icons/notification.svg'
 function AdminDropDown() {
     const { data: session, status } = useSession()
     return (
-        <div className='flex items-center  p-1 rounded-full'>
-
-
+        <div className='flex items-center rounded-full'>
             <button className="group object-cover rounded-full relative me-2 hover:bg-slate-100">
                 <div className="imagebox h-[35px] w-[35px] rounded-full overflow-hidden p-1.5">
                     <NotificationIcon className='h-full w-full text-slate-500' />

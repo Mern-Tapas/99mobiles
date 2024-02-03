@@ -1,15 +1,20 @@
 'use client'
 import DivSecondary from '@/components/DivSecondary'
 import React from 'react'
-import logo from '@/public/images/company/logo.jpg'
-import Link from 'next/link'
+import logo from '@/public/images/company/logo.png'
 import Dashboard from '@/public/icons/frame-2.svg'
-import Users from '@/public/icons/profile.svg'
 import Image from 'next/image'
+import SidebarLink from './SidebarLink'
+import ProfileIcon from '@/public/icons/user-square.svg'
+import SmsIcon from '@/public/icons/sms.svg'
+import Blog from '@/public/icons/edit.svg'
+import WalletIcon from '@/public/icons/wallet-3.svg'
+import SettingIcon from '@/public/icons/setting-3.svg'
+
 
 function AdminSidebar() {
     return (
-        <DivSecondary className='AdminSidebar  h-full w-[200px] shrink-0'>
+        <DivSecondary className='AdminSidebar  h-full w-[210px] shrink-0'>
             <div className=' p-2 flex items-center'>
                 <div className='h-[40px] w-[40px] me-1'>
                     <Image alt='logo' height={100} width={100} src={logo} />
@@ -19,20 +24,13 @@ function AdminSidebar() {
             <div className=" py-2 mt-2">
                 <h2 className='text-xs font-medium text-gray-300 ps-6'>Menu</h2>
                 <div className='mt-2'>
-                    <Link href='/' className='flex items-center  p-2 ps-6 hover:bg-slate-900 rounded relative text-slate-400'>
-                        <span className='h-[17px] w-[17px] me-3'>
-                            <Dashboard className="h-full w-full" />
-                        </span>
-                        <p className='text-sm '>Dashboard</p>
-                    </Link>
-                    <Link href='/' className='flex items-center  p-2 ps-6 hover:bg-slate-900 rounded relative'>
-                        <span className='h-[17px] w-[17px] me-3'>
-                            <Users className="h-full w-full" />
-                        </span>
-                        <p className='text-sm '>Users</p>
-                        <span className='absolute  left-0 h-full w-[5px] bg-slate-100 rounded-r'></span>
-                    </Link>
-                </div>
+                    <SidebarLink sublink={[{ linkname: "sub links", path: "" }, { linkname: "sub links", path: "" }, { linkname: "sub links", path: "" }]} isActive={true} LinkName='dashboard' Icon={Dashboard} />
+                    <SidebarLink isActive={false} LinkName='Post' Icon={Blog} />
+                    <SidebarLink isActive={false} LinkName='profile' Icon={ProfileIcon} />
+                    <SidebarLink isActive={false} LinkName='Messages' Icon={SmsIcon} />
+                    <SidebarLink isActive={false} LinkName='Wallet' Icon={WalletIcon} />
+                    <SidebarLink isActive={false} LinkName='Settings' Icon={SettingIcon} />
+                </div>  
             </div>
         </DivSecondary>
     )

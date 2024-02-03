@@ -8,7 +8,7 @@ function layout({ children }: { children: React.ReactNode }) {
       <AdminSidebar />
       <div className='h-full w-full overflow-y-scroll bg-gray-100'>
         <AdminTopBar />
-        <div className='p-2 '>
+        <div className='p-2'>
           {children}
         </div>
       </div>
