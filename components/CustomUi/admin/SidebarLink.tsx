@@ -28,13 +28,13 @@ function SidebarLink({ Icon, LinkName, isActive, sublink }: Props) {
             </Link>
             {sublink ?
                 <div className={isActive ? "d-block" : "hidden"}>
-                    {sublink.map((links) => {
+                    {sublink.map((links,index) => {
 
-                        return <Link href='/' className='flex items-center p-2 ps-10 hover:bg-slate-900 rounded relative'>
+                        return <Link href='/' key={index} className='group flex items-center p-2 ps-10 hover:bg-slate-900 rounded relative'>
                             <span className='h-[12px]  w-[12px]  me-3 '>
                                 <SublinkIcon className="h-full w-full text-gray-500" />
                             </span>
-                            <p className='text-xs capitalize'>{links.linkname}</p>
+                            <p className='text-xs capitalize group-hover:translate-x-1 transition-all'>{links.linkname}</p>
                         </Link>
                     })}
                 </div>

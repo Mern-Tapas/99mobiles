@@ -1,13 +1,14 @@
+import InputIcon from '@/components/CustomUi/InputIcon'
 import DivPrimary from '@/components/DivPrimary'
 import React from 'react'
+import SearchIcon from '@/public/icons/search-normal-1.svg'
 
 function page() {
   return (
     <div className=''>
       <div className='mt-4'>
-        <input type="text" placeholder='Search Chat' className=' focus:outline-0 px-6 ps-8 p-1 py-3 text-sm bg-white w-[200px] rounded-full' />
+        <InputIcon Icon={SearchIcon} />
       </div>
-
       <div className="mt-4">
         <DivPrimary className='rounded'>
           <div className='border p-2'>
