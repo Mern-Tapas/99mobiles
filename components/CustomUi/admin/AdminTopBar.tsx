@@ -6,7 +6,7 @@ import MenuIcon from '@/public/icons/menu-1.svg'
 import AdminDropDown from './AdminDropDown'
 import { useSession } from 'next-auth/react'
 import { useContext } from 'react'
-import { adminContext } from '@/app/(admin)/(layout1)/admin/(layout1)/layout'
+import { adminContext } from '@/app/(admin)/(layout1)/admin/(layout1)/Layout'
 
 function AdminTopBar() {
 
