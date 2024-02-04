@@ -7,13 +7,25 @@ export default withAuth(
 
 
         if (req.nextUrl.pathname.startsWith("/admin") && req.nextauth.token?.role !== "admin") {
-            return new NextResponse("you are not authorised")
-        } 
+            // return new NextResponse("you are not authorised")
+            const url = req.nextUrl.clone()
+            if (url.pathname === '/admin') {
+                url.pathname = '/user'
+                return NextResponse.redirect(url)
+            }
+        }
         if (req.nextUrl.pathname.startsWith("/user") && req.nextauth.token?.role !== "user") {
-            return new NextResponse("you are not authorised")
-        } 
+            // return new NextResponse("you are not authorised")
 
-        
+            const url = req.nextUrl.clone()
+            if (url.pathname === '/user') {
+                url.pathname = '/admin'
+                return NextResponse.redirect(url)
+            }
+
+        }
+
+
     },
     {
         callbacks: {
