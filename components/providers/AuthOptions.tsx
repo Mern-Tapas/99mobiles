@@ -78,7 +78,7 @@ function AuthOptions({ className }: { className: string }) {
         </div>
 
         <div className='mb-3'>
-          <button className='border flex w-full p-3 rounded relative' onClick={() => { signIn("google") }}>
+          <button className='border bg-gray-100 hover:bg-gray-200 flex w-full p-3 rounded relative' onClick={() => { signIn("google") }}>
             <div className='h-[20px] w-[20px] me-auto'>
               <GoogleIcon className="h-full w-full" />
             </div>

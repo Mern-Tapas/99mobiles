@@ -7,9 +7,10 @@ import { createContext } from 'react'
 
 interface AdminContext {
   sidebar: boolean | undefined
+  handleSidebar(value: boolean): void
 }
 
-const adminContext = createContext<AdminContext>({ sidebar: false });
+export const adminContext = createContext<AdminContext>({ sidebar: false, handleSidebar: (value: boolean) => { } });
 
 function Layout({ children }: { children: React.ReactNode }) {
 
@@ -30,7 +31,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   }, [sidebar])
 
   return (
-    <adminContext.Provider value={{ sidebar }}>
+    <adminContext.Provider value={{ sidebar, handleSidebar }}>
 
       <div className='h-screen bg-white flex overflow-hidden'>
         <AdminSidebar />
