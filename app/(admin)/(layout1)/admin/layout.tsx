@@ -5,12 +5,12 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { createContext } from 'react'
 
-interface AdminContext {
+export interface AdminContextInterface {
   sidebar: boolean | undefined
   handleSidebar(value: boolean): void
 }
 
-export const AdminContext = createContext<AdminContext>({ sidebar: false, handleSidebar: (value: boolean) => { } });
+export const AdminContext = createContext<AdminContextInterface>({ sidebar: false, handleSidebar: (value: boolean) => { } });
 
 function Layout({ children }: { children: React.ReactNode }) {
 
