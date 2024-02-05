@@ -28,6 +28,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     const getsidebar = localStorage.getItem("sidebar")
     if (getsidebar) {
       setSidebar(JSON.parse(getsidebar))
+      //tapas
     }
   }, [sidebar])
 
