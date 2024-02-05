@@ -16,7 +16,7 @@ export const AdminContext = createContext<AdminContextInterface>({ sidebar: fals
 function Layout({ children }: { children: React.ReactNode }) {
 
 
-  const [sidebar, setSidebar] = useState<boolean>()
+  const [sidebar, setSidebar] = useState<boolean>(false)
 
   const handleSidebar = (value: boolean) => {
     localStorage.setItem("sidebar", JSON.stringify(value))
@@ -30,7 +30,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       setSidebar(JSON.parse(getsidebar))
       //tapas
     }
-  }, [sidebar])
+  }, [])
 
   return (
     <AdminContext.Provider value={{ sidebar, handleSidebar }}>
