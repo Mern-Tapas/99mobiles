@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { createContext } from 'react'
 
 export interface AdminContextInterface {
-  sidebar: boolean | undefined,
+  sidebar: boolean,
   handleSidebar: (value: boolean) => void
 }
 
