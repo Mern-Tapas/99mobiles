@@ -4,10 +4,22 @@ import AdminTopBar from '@/components/CustomUi/admin/AdminTopBar'
 import React, { createContext } from 'react'
 import { useState, useEffect } from 'react'
 
+
 export interface AdminContextValue {
-  name: string
+  isOpen: boolean,
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  isMobileSidebar: boolean,
+  setMobileSidebar: React.Dispatch<React.SetStateAction<boolean>>
 }
-export const Context = createContext<AdminContextValue>({ name: "" })
+
+export const AdminContext = createContext<AdminContextValue>({
+  isOpen: false,
+  setOpen: (): void => { },
+  isMobileSidebar: false,
+  setMobileSidebar: (): void => { }
+
+
+})
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 
