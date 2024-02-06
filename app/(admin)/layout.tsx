@@ -1,10 +1,15 @@
 'use client'
 import AdminSidebar from '@/components/CustomUi/admin/AdminSidebar'
 import AdminTopBar from '@/components/CustomUi/admin/AdminTopBar'
-import React from 'react'
+import React, { createContext } from 'react'
 import { useState, useEffect } from 'react'
 
-function Layout({ children }: { children: React.ReactNode }) {
+export interface AdminContextValue {
+  name: string
+}
+export const AdminContext = createContext<AdminContextValue>({ name: "" })
+
+const Layout = ({ children }: { children: React.ReactNode }) {
 
 
   const [sidebar, setSidebar] = useState<boolean>(false)
@@ -23,17 +28,20 @@ function Layout({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
+
+
+
   return (
 
-      <div className='h-screen bg-white flex overflow-hidden'>
-        <AdminSidebar />
-        <div className='h-full w-full overflow-y-scroll bg-gray-100'>
-          <AdminTopBar />
-          <div className='p-2'>
-            {children}
-          </div>
+    <div className='h-screen bg-white flex overflow-hidden'>
+      <AdminSidebar />
+      <div className='h-full w-full overflow-y-scroll bg-gray-100'>
+        <AdminTopBar />
+        <div className='p-2'>
+          {children}
         </div>
       </div>
+    </div>
   )
 }
 
