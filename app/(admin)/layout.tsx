@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 export interface AdminContextValue {
   name: string
 }
-export const AdminContext = createContext<AdminContextValue>({ name: "" })
+export const Context = createContext<AdminContextValue>({ name: "" })
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 
