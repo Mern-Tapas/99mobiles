@@ -6,13 +6,10 @@ import MenuIcon from '@/public/icons/menu-1.svg'
 import AdminDropDown from './AdminDropDown'
 import { useSession } from 'next-auth/react'
 import { useContext } from 'react'
-import { AdminContext } from '@/app/(admin)/layout'
-import { AdminContextInterface } from '@/app/(admin)/layout'
 
 function AdminTopBar() {
 
     const { data: session, status } = useSession()
-    const { sidebar, handleSidebar } = useContext<AdminContextInterface>(AdminContext)
 
     return (
         <DivPrimary className='topbar p-2 sticky top-0 flex h-[50px] items-center'>

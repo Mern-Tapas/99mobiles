@@ -3,14 +3,6 @@ import AdminSidebar from '@/components/CustomUi/admin/AdminSidebar'
 import AdminTopBar from '@/components/CustomUi/admin/AdminTopBar'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { createContext } from 'react'
-
-export interface AdminContextInterface {
-  sidebar: boolean,
-  handleSidebar: (value: boolean) => void
-}
-
-export const AdminContext = createContext<AdminContextInterface>({ sidebar: false, handleSidebar: (value: boolean) => { } });
 
 function Layout({ children }: { children: React.ReactNode }) {
 
@@ -32,7 +24,6 @@ function Layout({ children }: { children: React.ReactNode }) {
   }, [])
 
   return (
-    <AdminContext.Provider value={{ sidebar, handleSidebar }}>
 
       <div className='h-screen bg-white flex overflow-hidden'>
         <AdminSidebar />
@@ -43,7 +34,6 @@ function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
-    </AdminContext.Provider>
   )
 }
 
