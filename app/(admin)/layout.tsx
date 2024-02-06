@@ -9,7 +9,7 @@ export interface AdminContextValue {
 }
 export const AdminContext = createContext<AdminContextValue>({ name: "" })
 
-const Layout = ({ children }: { children: React.ReactNode }) {
+const Layout = ({ children }: { children: React.ReactNode }) => {
 
 
   const [sidebar, setSidebar] = useState<boolean>(false)
