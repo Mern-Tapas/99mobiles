@@ -7,26 +7,6 @@ import { useState, useEffect } from 'react'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 
-
-  const [sidebar, setSidebar] = useState<boolean>(false)
-
-  const handleSidebar = (value: boolean) => {
-    localStorage.setItem("sidebar", JSON.stringify(value))
-    setSidebar(value)
-  }
-
-
-  useEffect(() => {
-    const getsidebar = localStorage.getItem("sidebar")
-    if (getsidebar) {
-      setSidebar(JSON.parse(getsidebar))
-      //tapas
-    }
-  }, [])
-
-
-
-
   return (
     <AdminContextProvider>
       <div className='h-screen bg-white flex overflow-hidden'>

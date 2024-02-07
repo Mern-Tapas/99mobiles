@@ -6,22 +6,25 @@ import MenuIcon from '@/public/icons/menu-1.svg'
 import AdminDropDown from './AdminDropDown'
 import { useSession } from 'next-auth/react'
 import { useContext } from 'react'
+import { AdminContexts } from '@/components/providers/AdminContextProvider'
+
 
 function AdminTopBar() {
 
     const { data: session, status } = useSession()
+    const { sidebar, handleSidebar } = useContext(AdminContexts)
 
     return (
         <DivPrimary className='topbar p-2 sticky top-0 flex h-[50px] items-center'>
             <div className='me-2'>
-                <button className='p-1.5 border rounded'>
-                    {/* <div className='h-[20px] w-[20px]' onClick={() => { handleSidebar(!sidebar) }}>
+                <button className='p-1.5 border rounded' onClick={() => { handleSidebar(!sidebar) }}>
+                    <div className='h-[20px] w-[20px]' >
                         {sidebar ?
                             <CloseIcon className="h-full w-full text-gray-600 " />
                             :
                             <MenuIcon className="h-full w-full text-gray-600 " />
                         }
-                    </div> */}
+                    </div>
                 </button>
             </div>
             <div className='me-2'>
