@@ -1,26 +1,27 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import SublinkIcon from '@/public/icons/sublink.svg'
 import { AdminContexts } from '@/components/providers/AdminContextProvider'
 import DivSecondary from '@/components/DivSecondary'
 import { SubLink } from './AdminSidebar'
+import SublinkIcon from '@/public/icons/sublink.svg'
 
 interface Props {
     Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>,
+    path: string,
     LinkName: string,
-    isActive: Boolean,
-    sublink: SubLink[] | undefined
+    isActive: Boolean | undefined,
+    sublink?: SubLink[] | undefined
 }
 
 
 
-function SidebarLink({ Icon, LinkName, isActive, sublink }: Props) {
+function SidebarLink({ Icon, LinkName, isActive, sublink, path }: Props) {
 
     const { sidebar } = useContext(AdminContexts)
 
     return (
-        <div className='relative group'>
-            <Link href='/' className={`flex items-center w-full relative p-2 ps-6  hover:bg-slate-900 rounded focus:outline-0 focus:bg-slate-900`}>
+        <div className='relative group '>
+            <Link href={path} className={`flex items-center w-full relative p-2 ps-6  hover:bg-slate-900 rounded focus:outline-0 focus:bg-slate-900`}>
                 <span className={`h-[15px] w-[15px] me-3`}>
                     <Icon className="h-full w-full" />
                 </span>
@@ -38,7 +39,7 @@ function SidebarLink({ Icon, LinkName, isActive, sublink }: Props) {
 
                     {sublink.map((links, index) => {
 
-                        return <Link href='/' key={index} className={`group flex items-center p-2 ${sidebar ? "ps-10" : " p-3"} hover:bg-slate-900 rounded relative text-gray-400 hover:text-gray-100`}>
+                        return <Link href={`${path}/${links.path}`} key={index} className={`${path}/${links.path} group flex items-center p-2 ${sidebar ? "ps-10" : " p-3"} hover:bg-slate-900 rounded relative text-gray-400 hover:text-gray-100`}>
                             {sidebar ?
                                 <span className='h-[12px]  w-[12px]  me-3 '>
                                     <SublinkIcon className="h-full w-full" />

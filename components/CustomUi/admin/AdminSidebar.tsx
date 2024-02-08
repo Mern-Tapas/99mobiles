@@ -7,6 +7,9 @@ import Image from 'next/image'
 import SidebarLink from './SidebarLink'
 import { AdminContexts } from '@/components/providers/AdminContextProvider'
 import BlogIcon from '@/public/icons/edit.svg'
+import { usePathname } from 'next/navigation'
+import UserIcon from '@/public/icons/profile.svg'
+
 
 
 export interface SubLink {
@@ -16,6 +19,8 @@ export interface SubLink {
 
 function AdminSidebar() {
 
+
+    const currentPath = usePathname()
 
     interface SidebarLink {
         linkname: string,
@@ -29,19 +34,13 @@ function AdminSidebar() {
 
     const sidebarlinks: SidebarLink[] = [
         {
-            linkname: "Dashboard",
-            Icon: Dashboard,
-            path: "/dashboard",
-
-        },
-        {
-            linkname: "Dashboard",
+            linkname: "Post",
             Icon: BlogIcon,
-            path: "/dashboard",
+            path: "/post",
             sublinks: [
                 {
                     linkname: "Create",
-                    path: "/dashboard",
+                    path: "/create",
                 },
                 {
                     linkname: "Update",
@@ -54,9 +53,9 @@ function AdminSidebar() {
             ]
         },
         {
-            linkname: "Dashboard",
-            Icon: BlogIcon,
-            path: "/dashboard",
+            linkname: "User",
+            Icon: UserIcon,
+            path: "/user",
             sublinks: [
                 {
                     linkname: "Create",
@@ -79,6 +78,15 @@ function AdminSidebar() {
     ]
 
 
+    const checkpath = (linkname: string) => {
+
+        if (currentPath?.includes(linkname)) {
+            return true
+        }
+
+    }
+
+
     return (
         <DivSecondary className={`AdminSidebar  h-full ${sidebar ? "w-[210px]" : "w-[80px]"} shrink-0 lg:flex flex-col hidden z-10`}>
             <div className=' p-2 flex items-center'>
@@ -94,8 +102,9 @@ function AdminSidebar() {
                     <SidebarLink isActive={true} sublink={[{ linkname: "Create", path: "" }, { linkname: "Edit Post", path: "" }]} LinkName='Post' Icon={Blog} />
                     <SidebarLink isActive={false} LinkName='uses' Icon={ProfileIcon} />
                     <SidebarLink isActive={false} LinkName='Messages' Icon={SmsIcon} /> */}
+                    <SidebarLink path={`/admin`} isActive={(currentPath == '/admin') ? true : false} LinkName='Dashboard' Icon={Dashboard} />
                     {sidebarlinks.map((link, index) => {
-                        return <SidebarLink key={index} isActive={false} LinkName={link.linkname} sublink={link.sublinks} Icon={link.Icon} />
+                        return <SidebarLink path={`/admin${link.path}`} key={index} isActive={checkpath(link.path)} LinkName={link.linkname} sublink={link.sublinks} Icon={link.Icon} />
                     })}
                 </div>
             </div>
@@ -106,13 +115,7 @@ function AdminSidebar() {
                     <SidebarLink isActive={false} LinkName='Settings' Icon={SettingIcon} /> */}
                 </div>
             </div>
-            {sidebar ?
-                <div className='mt-auto m-3 p-4 bg-gray-800/60 flex flex-col h-[130px] rounded-lg'>
-                    <h1 className='text-center font-semibold'>Become a PRO</h1>
-                    <p className='text-center text-gray-300 text-xs mt-1 '>Get More Free</p>
-                    <button className='mt-auto bg-purple-500 p-2 rounded text-sm'>Upgrade</button>
-                </div>
-                : ""}
+
         </DivSecondary>
 
     )
