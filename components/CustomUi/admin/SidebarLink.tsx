@@ -3,18 +3,16 @@ import Link from 'next/link'
 import SublinkIcon from '@/public/icons/sublink.svg'
 import { AdminContexts } from '@/components/providers/AdminContextProvider'
 import DivSecondary from '@/components/DivSecondary'
+import { SubLink } from './AdminSidebar'
 
 interface Props {
     Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>,
     LinkName: string,
     isActive: Boolean,
-    sublink?: SubLink[]
+    sublink: SubLink[] | undefined
 }
 
-interface SubLink {
-    linkname: string,
-    path: string
-}
+
 
 function SidebarLink({ Icon, LinkName, isActive, sublink }: Props) {
 
@@ -22,8 +20,8 @@ function SidebarLink({ Icon, LinkName, isActive, sublink }: Props) {
 
     return (
         <div className='relative group'>
-            <Link href='/' className='flex items-center relative p-2 ps-6 hover:bg-slate-900 rounded'>
-                <span className='h-[17px] w-[17px] me-3'>
+            <Link href='/' className={`flex items-center w-full relative p-2 ps-6  hover:bg-slate-900 rounded focus:outline-0 focus:bg-slate-900`}>
+                <span className={`h-[15px] w-[15px] me-3`}>
                     <Icon className="h-full w-full" />
                 </span>
                 <p className={`${sidebar ? "" : "hidden"} text-xs capitalize`}>{LinkName}</p>
@@ -34,7 +32,10 @@ function SidebarLink({ Icon, LinkName, isActive, sublink }: Props) {
             {sublink ?
 
 
-                <DivSecondary className={`${isActive ? "d-block" : "hidden"} ${sidebar ? "" : "hidden group-hover:block hover:block absolute left-[85px] top-0 shadow-lg rounded w-[170px]"} `}>
+                <DivSecondary className={`${isActive ? "d-block" : "hidden"} ${sidebar ? "" : "hidden group-hover:block hover:block absolute left-[80px] top-0 shadow-lg rounded-r w-[170px]"} `}>
+
+
+
                     {sublink.map((links, index) => {
 
                         return <Link href='/' key={index} className={`group flex items-center p-2 ${sidebar ? "ps-10" : " p-3"} hover:bg-slate-900 rounded relative text-gray-400 hover:text-gray-100`}>

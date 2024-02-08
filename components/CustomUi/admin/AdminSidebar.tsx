@@ -5,24 +5,84 @@ import logo from '@/public/images/company/logo.png'
 import Dashboard from '@/public/icons/frame-2.svg'
 import Image from 'next/image'
 import SidebarLink from './SidebarLink'
-import ProfileIcon from '@/public/icons/user-square.svg'
-import SmsIcon from '@/public/icons/sms.svg'
-import Blog from '@/public/icons/edit.svg'
-import WalletIcon from '@/public/icons/wallet-3.svg'
-import SettingIcon from '@/public/icons/setting-3.svg'
 import { AdminContexts } from '@/components/providers/AdminContextProvider'
+import BlogIcon from '@/public/icons/edit.svg'
 
+
+export interface SubLink {
+    linkname: string,
+    path: string
+}
 
 function AdminSidebar() {
 
 
+    interface SidebarLink {
+        linkname: string,
+        Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>,
+        path: string,
+        sublinks?: SubLink[]
+    }
+
     const { sidebar } = useContext(AdminContexts)
 
 
+    const sidebarlinks: SidebarLink[] = [
+        {
+            linkname: "Dashboard",
+            Icon: Dashboard,
+            path: "/dashboard",
+
+        },
+        {
+            linkname: "Dashboard",
+            Icon: BlogIcon,
+            path: "/dashboard",
+            sublinks: [
+                {
+                    linkname: "Create",
+                    path: "/dashboard",
+                },
+                {
+                    linkname: "Update",
+                    path: "/dashboard",
+                },
+                {
+                    linkname: "Update",
+                    path: "/dashboard",
+                },
+            ]
+        },
+        {
+            linkname: "Dashboard",
+            Icon: BlogIcon,
+            path: "/dashboard",
+            sublinks: [
+                {
+                    linkname: "Create",
+                    path: "/dashboard",
+                },
+                {
+                    linkname: "Update",
+                    path: "/dashboard",
+                },
+                {
+                    linkname: "Update",
+                    path: "/dashboard",
+                },
+                {
+                    linkname: "Update",
+                    path: "/dashboard",
+                },
+            ]
+        },
+    ]
+
+
     return (
-        <DivSecondary className={`AdminSidebar  h-full ${sidebar ? "w-[210px]" : "w-[80px]"} shrink-0 lg:flex flex-col hidden`}>
+        <DivSecondary className={`AdminSidebar  h-full ${sidebar ? "w-[210px]" : "w-[80px]"} shrink-0 lg:flex flex-col hidden z-10`}>
             <div className=' p-2 flex items-center'>
-                <div className='h-[40px] w-[40px] me-1'>
+                <div className='h-[40px] w-[40px] me-1 '>
                     <Image alt='logo' height={100} width={100} src={logo} />
                 </div>
                 <h2 className={`font-bold uppercase ${sidebar ? "" : "hidden"}`}>Company Name</h2>
@@ -30,17 +90,20 @@ function AdminSidebar() {
             <div className=" py-2 mt-2">
                 <h2 className='text-xs font-medium text-gray-400 ps-6'>Menu</h2>
                 <div className='mt-2'>
-                    <SidebarLink isActive={false} LinkName='dashboard' Icon={Dashboard} />
+                    {/* <SidebarLink isActive={false} LinkName='dashboard' Icon={Dashboard} />
                     <SidebarLink isActive={true} sublink={[{ linkname: "Create", path: "" }, { linkname: "Edit Post", path: "" }]} LinkName='Post' Icon={Blog} />
                     <SidebarLink isActive={false} LinkName='uses' Icon={ProfileIcon} />
-                    <SidebarLink isActive={false} LinkName='Messages' Icon={SmsIcon} />
+                    <SidebarLink isActive={false} LinkName='Messages' Icon={SmsIcon} /> */}
+                    {sidebarlinks.map((link, index) => {
+                        return <SidebarLink key={index} isActive={false} LinkName={link.linkname} sublink={link.sublinks} Icon={link.Icon} />
+                    })}
                 </div>
             </div>
             <div className=" py-2 mt-2">
                 <h2 className='text-xs font-medium text-gray-400 ps-6'>Others</h2>
                 <div className='mt-2'>
-                    <SidebarLink isActive={false} LinkName='Wallet' Icon={WalletIcon} />
-                    <SidebarLink isActive={false} LinkName='Settings' Icon={SettingIcon} />
+                    {/* <SidebarLink isActive={false} LinkName='Wallet' Icon={WalletIcon} />
+                    <SidebarLink isActive={false} LinkName='Settings' Icon={SettingIcon} /> */}
                 </div>
             </div>
             {sidebar ?
