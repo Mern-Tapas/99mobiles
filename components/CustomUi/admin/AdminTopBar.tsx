@@ -7,9 +7,12 @@ import AdminDropDown from './AdminDropDown'
 import { useSession } from 'next-auth/react'
 import { useContext } from 'react'
 import { AdminContexts } from '@/components/providers/AdminContextProvider'
+import { usePathname } from 'next/navigation'
 
 
 function AdminTopBar() {
+
+    const currentPath = usePathname()
 
     const { data: session, status } = useSession()
     const { sidebar, handleSidebar } = useContext(AdminContexts)
@@ -28,7 +31,7 @@ function AdminTopBar() {
                 </button>
             </div>
             <div className='me-2'>
-                <h1 className='font-semibold text-2xl'>Dashboard</h1>
+                <h1 className='font-semibold text-2xl capitalize'>{(currentPath?.split("/")[2]==null)?"dashboard":currentPath.split('/')[2]}</h1>
             </div>
             <div className='ms-auto'>
                 {session ?

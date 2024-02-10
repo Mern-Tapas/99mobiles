@@ -9,6 +9,8 @@ import { AdminContexts } from '@/components/providers/AdminContextProvider'
 import BlogIcon from '@/public/icons/edit.svg'
 import { usePathname } from 'next/navigation'
 import UserIcon from '@/public/icons/profile.svg'
+import LogoutIcon from '@/public/icons/logout-1.svg'
+import SettingIcon from '@/public/icons/setting-3.svg'
 
 
 
@@ -88,33 +90,30 @@ function AdminSidebar() {
 
 
     return (
-        <DivSecondary className={`AdminSidebar  h-full ${sidebar ? "w-[210px]" : "w-[80px]"} shrink-0 lg:flex flex-col hidden z-10`}>
+        <DivSecondary className={`AdminSidebar  h-full ${sidebar ? "w-[210px]" : "w-[70px]"} shrink-0 lg:flex flex-col hidden z-10`}>
             <div className=' p-2 flex items-center'>
                 <div className='h-[40px] w-[40px] me-1 '>
                     <Image alt='logo' height={100} width={100} src={logo} />
                 </div>
                 <h2 className={`font-bold uppercase ${sidebar ? "" : "hidden"}`}>Company Name</h2>
             </div>
-            <div className=" py-2 mt-2">
-                <h2 className='text-xs font-medium text-gray-400 ps-6'>Menu</h2>
+            <div className=" py-2 mt-2 ">
+                <h2 className={`${sidebar ? "text-xs font-medium text-gray-400 ps-6" : "text-xs text-center font-medium text-gray-400 "}`}>Menu</h2>
                 <div className='mt-2'>
-                    {/* <SidebarLink isActive={false} LinkName='dashboard' Icon={Dashboard} />
-                    <SidebarLink isActive={true} sublink={[{ linkname: "Create", path: "" }, { linkname: "Edit Post", path: "" }]} LinkName='Post' Icon={Blog} />
-                    <SidebarLink isActive={false} LinkName='uses' Icon={ProfileIcon} />
-                    <SidebarLink isActive={false} LinkName='Messages' Icon={SmsIcon} /> */}
                     <SidebarLink path={`/admin`} isActive={(currentPath == '/admin') ? true : false} LinkName='Dashboard' Icon={Dashboard} />
                     {sidebarlinks.map((link, index) => {
                         return <SidebarLink path={`/admin${link.path}`} key={index} isActive={checkpath(link.path)} LinkName={link.linkname} sublink={link.sublinks} Icon={link.Icon} />
                     })}
                 </div>
+
             </div>
-            <div className=" py-2 mt-2">
-                <h2 className='text-xs font-medium text-gray-400 ps-6'>Others</h2>
-                <div className='mt-2'>
-                    {/* <SidebarLink isActive={false} LinkName='Wallet' Icon={WalletIcon} />
-                    <SidebarLink isActive={false} LinkName='Settings' Icon={SettingIcon} /> */}
-                </div>
+            <div className="mt-auto">
+                <SidebarLink path={`/admin/settings`} isActive={(currentPath == '/admin/settings') ? true : false} LinkName='Dashboard' Icon={SettingIcon} />
+                <SidebarLink path={`/settings`} isActive={(currentPath == '/settings') ? true : false} LinkName='Dashboard' Icon={LogoutIcon} />
             </div>
+
+
+
 
         </DivSecondary>
 

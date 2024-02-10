@@ -15,7 +15,7 @@ function Header({ className }: { className: React.ReactNode }) {
 
     return (
         <>
-            <DivPrimary className={`${className} `}>
+            <DivPrimary className={`${className} z-20`}>
                 <MaxWScreenXl className="flex justify-between items-center h-[60px]">
                     <div>
                         <Heading className="font-bold"><Link href={'/'}>Sarkarii Job Alert</Link></Heading>

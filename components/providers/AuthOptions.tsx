@@ -86,8 +86,9 @@ function AuthOptions({ className }: { className: string }) {
           </button>
         </div>
 
-        <div className='mb-3'>
-          <p className='text-center'>or</p>
+        <div className='mb-3 flex relative'>
+          <p className='text-center bg-white px-3 m-auto z-10'>or</p>
+          <span className='border-b w-full  absolute top-[50%] translate-y-[50%]'></span>
         </div>
         <form onSubmit={handleLogin} >
 
