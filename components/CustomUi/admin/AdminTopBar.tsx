@@ -18,7 +18,7 @@ function AdminTopBar() {
     const { sidebar, handleSidebar } = useContext(AdminContexts)
 
     return (
-        <DivPrimary className='topbar p-2 sticky top-0 flex h-[50px] items-center'>
+        <DivPrimary className='topbar p-2 px-5 sticky top-0 flex h-[50px] items-center z-10'>
             <div className='me-2'>
                 <button className='p-1.5 border rounded' onClick={() => { handleSidebar(!sidebar) }}>
                     <div className='h-[20px] w-[20px]' >
@@ -31,7 +31,7 @@ function AdminTopBar() {
                 </button>
             </div>
             <div className='me-2'>
-                <h1 className='font-semibold text-2xl capitalize'>{(currentPath?.split("/")[2]==null)?"dashboard":currentPath.split('/')[2]}</h1>
+                <h1 className='font-semibold text-2xl capitalize'>{(currentPath?.split("/")[2] == null) ? "dashboard" : currentPath.split('/')[2]}</h1>
             </div>
             <div className='ms-auto'>
                 {session ?

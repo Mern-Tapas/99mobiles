@@ -30,10 +30,10 @@ function Header({ className }: { className: React.ReactNode }) {
                         :
                         <div>
                             <Link href="register">
-                                <Button className='me-2' variant="outline">Register</Button>
+                                <Button className='me-2 rounded ' variant="outline">Register</Button>
                             </Link>
                             <Link href="login">
-                                <Button >Login</Button>
+                                <Button className='bg-gray-900 text-white rounded hover:bg-gray-950' >Login</Button>
                             </Link>
                         </div>}
                 </MaxWScreenXl>

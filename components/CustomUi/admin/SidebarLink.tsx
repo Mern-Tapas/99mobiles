@@ -10,18 +10,19 @@ interface Props {
     path: string,
     LinkName: string,
     isActive: Boolean | undefined,
-    sublink?: SubLink[] | undefined
+    sublink?: SubLink[] | undefined,
+    className?: string
 }
 
 
 
-function SidebarLink({ Icon, LinkName, isActive, sublink, path }: Props) {
+function SidebarLink({ Icon, LinkName, isActive, sublink, path, className }: Props) {
 
     const { sidebar } = useContext(AdminContexts)
 
     return (
         <div className='relative group '>
-            <Link href={path} className={`flex items-center w-full relative p-3 ps-6 hover:bg-slate-900 rounded focus:outline-0 focus:bg-slate-900`}>
+            <Link href={path} className={`flex items-center w-full relative p-3 ps-6 hover:bg-slate-900 rounded focus:outline-0 focus:bg-slate-900 ${className}`}>
                 <span className={`h-[15px] w-[15px] me-3`}>
                     <Icon className="h-full w-full" />
                 </span>
