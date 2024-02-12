@@ -44,14 +44,6 @@ function AdminSidebar() {
                     linkname: "Create",
                     path: "/create",
                 },
-                {
-                    linkname: "Update",
-                    path: "/dashboard",
-                },
-                {
-                    linkname: "Update",
-                    path: "/dashboard",
-                },
             ]
         },
         {
