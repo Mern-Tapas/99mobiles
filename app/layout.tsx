@@ -24,12 +24,12 @@ export default function RootLayout({
         <link rel="stylesheet" href="/splider/splide.min.css" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute='class'>
+        {/* <ThemeProvider attribute='class'> */}
           <Provider>
             {children}
             <Toaster />
           </Provider>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   )

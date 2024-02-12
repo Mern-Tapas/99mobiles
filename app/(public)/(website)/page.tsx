@@ -5,8 +5,8 @@ function page() {
   return (
    <div>
     <MaxWScreenXl className='mt-2'>
-      <div className="grid">
-        
+      <div className="grid border">
+        d
       </div>
     </MaxWScreenXl>
    </div>
