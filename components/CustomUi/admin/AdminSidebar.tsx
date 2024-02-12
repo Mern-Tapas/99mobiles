@@ -92,7 +92,7 @@ function AdminSidebar() {
     return (
         <DivSecondary className={`AdminSidebar  h-full ${sidebar ? "w-[210px]" : "w-[70px]"} shrink-0 lg:flex flex-col hidden z-10`}>
             <div className=' p-2 flex items-center'>
-                <div className={`${sidebar ? "h-[40px] w-[40px] me-1 " : "mx-auto"}`}>
+                <div className={` h-[40px] w-[40px] ${sidebar ? " me-1 " : "mx-auto"}`}>
                     <Image alt='logo' height={100} width={100} src={logo} />
                 </div>
                 <h2 className={`font-bold uppercase ${sidebar ? "" : "hidden"}`}>Company Name</h2>
