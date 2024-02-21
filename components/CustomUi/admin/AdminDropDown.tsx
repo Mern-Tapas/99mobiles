@@ -26,9 +26,9 @@ function AdminDropDown() {
                     <NotificationIcon className='h-full w-full text-slate-500' />
                 </div>
             </button>
-            <button className="group object-cover rounded-full relative w-fit border flex p-[3px]  ps-4">
+            <button className="group object-cover rounded-full relative w-fit border flex p-[3px]  lg:ps-4">
 
-                <div className='me-4 text-end'>
+                <div className='me-4 text-end lg:block hidden'>
                     <h3 className='text-[8px] font-bold'>{session?.user?.name}</h3>
                     <p className='text-[8px] text-slate-500'>{session?.user?.email}</p>
                 </div>

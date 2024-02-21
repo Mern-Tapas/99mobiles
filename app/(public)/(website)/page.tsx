@@ -6,7 +6,8 @@ function page() {
    <div>
     <MaxWScreenXl className='mt-2'>
       <div className="grid border">
-        d
+        tapas gharami
+        indore
       </div>
     </MaxWScreenXl>
    </div>

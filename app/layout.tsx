@@ -22,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="/splider/splide.min.css" />
+        <meta name="google-site-verification" content="RNtnouSMQjBcgTBl-vya7Pn_ffzM2FNRPY_pvt5eix0" />
       </head>
       <body className={inter.className}>
         {/* <ThemeProvider attribute='class'> */}
