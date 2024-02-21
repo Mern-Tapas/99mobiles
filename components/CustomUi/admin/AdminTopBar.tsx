@@ -30,13 +30,9 @@ function AdminTopBar() {
                     </div>
                 </button>
             </div>
-<<<<<<< HEAD
-            
-=======
             <div className='me-2'>
                 {/* <h1 className='font-semibold text-2xl capitalize'>{(currentPath?.split("/")[2] == null) ? "dashboard" : currentPath.split('/')[2]}</h1> */}
             </div>
->>>>>>> 1d857904e0a903c219db06b0006a2b4b4e3f2cd8
             <div className='ms-auto'>
                 {session ?
                     <AdminDropDown />
