@@ -87,7 +87,7 @@ function AdminSidebar() {
                 <div className={` h-[40px] w-[40px] ${sidebar ? " me-1 " : "mx-auto"}`}>
                     <Image alt='logo' height={100} width={100} src={logo} />
                 </div>
-                <h2 className={`font-bold uppercase ${sidebar ? "" : "hidden"}`}>Company Name</h2>
+                <h2 className={`font-bold uppercase ${sidebar ? "" : "hidden"}`}>Company    </h2>
             </div>
             <div className=" py-2 mt-2 ">
                 <h2 className={`${sidebar ? "text-xs font-medium text-gray-400 ps-6" : "text-xs text-center font-medium text-gray-400 "}`}>Menu</h2>
