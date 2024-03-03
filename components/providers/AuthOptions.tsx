@@ -67,18 +67,18 @@ function AuthOptions({ className }: { className: string }) {
 
 
   return (
-    <DivPrimary className={`${className} transition-all	 ${session ? "" : ""} lg:w-[370px] w-[350px] `}>
+    <DivPrimary className={`${className} transition-all	 ${session ? "" : ""} lg:w-[370px] w-[350px] shadow-lg`}>
       <DivPrimary className='p-6 w-full rounded'>
 
 
 
         <div className='mb-3'>
-          <h2 className='text-xl font-bold poppins text-center mb-3 '>Login</h2>
-          <p className='text-center text-slate-400 text-sm'>Hey, Enter Your details to get sing in to your account</p>
+          <h2 className='text-xl font-bold poppins text-center mb-3 '>Sign in into Job Portal</h2>
+          {/* <p className='text-center text-slate-400 text-sm'>Hey, Enter Your details to get sing in to your account</p> */}
         </div>
 
         <div className='mb-3'>
-          <button className='border bg-gray-100 hover:bg-gray-200 flex w-full p-3 rounded relative' onClick={() => { signIn("google") }}>
+          <button className='border  flex w-full p-3 rounded relative' onClick={() => { signIn("google") }}>
             <div className='h-[20px] w-[20px] me-auto'>
               <GoogleIcon className="h-full w-full" />
             </div>
