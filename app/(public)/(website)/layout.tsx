@@ -17,10 +17,11 @@ function layout({ children }: { children: React.ReactNode }) {
                 <div className='py-6'>
                     {children}
                 </div>
+                <div>
+                    <Footer />
+                </div>
             </div >
-            <div>
-                <Footer />
-            </div>
+
         </>
     )
 }
