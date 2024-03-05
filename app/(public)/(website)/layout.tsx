@@ -14,7 +14,7 @@ function layout({ children }: { children: React.ReactNode }) {
                     <HeaderLinks />
                 </div>
 
-                <div className=''>
+                <div className='py-6'>
                     {children}
                 </div>
             </div >
