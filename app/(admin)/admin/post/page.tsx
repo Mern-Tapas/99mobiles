@@ -8,8 +8,6 @@ function page() {
     <div className=''>
       <div className='mt-4 flex'>
         <InputIcon Icon={SearchIcon} />
-        <InputIcon className='ms-auto' Icon={SearchIcon} />
-        <InputIcon className='ms-3' Icon={SearchIcon} />
       </div>
       <div className="mt-4">
         <DivPrimary className=' rounded-xl overflow-hidden border'>
