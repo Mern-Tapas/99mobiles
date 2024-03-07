@@ -1,6 +1,8 @@
 import MaxWScreenXl from '@/components/MaxWScreenXl'
 import React from 'react'
 import Link from 'next/link'
+import FolderIcon from '@/public/icons/folder.svg'
+import HyperLink from '@/components/CustomUi/HyperLink'
 
 function page() {
   return (
@@ -11,10 +13,11 @@ function page() {
         <div className="grid gap-4 lg:grid-cols-[250px_auto]">
           <div className="">
 
-            <Link href={'latest'} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm'>Latest Notification</Link>
-            <Link href={'latest'} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm'>Admit Card</Link>
-            <Link href={'latest'} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm'>Result</Link>
-            <Link href={'latest'} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm'>Exam Dates</Link>
+            <HyperLink Icon={FolderIcon} linkName='Latest Notification' link='latestnotification' />
+            <HyperLink Icon={FolderIcon} linkName='Admit Card' link='latestnotification' />
+            <HyperLink Icon={FolderIcon} linkName='Result' link='latestnotification' />
+            <HyperLink Icon={FolderIcon} linkName='syllabus' link='latestnotification' />
+            <HyperLink Icon={FolderIcon} linkName='Latest Notification' link='latestnotification' />
             <div className="rounded-lg bg-white h-[180px] p-2">
               <span>ad</span>
             </div>
