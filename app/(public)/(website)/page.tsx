@@ -35,6 +35,8 @@ function page() {
 
         </div>
 
+        <input type="text" />
+
       </MaxWScreenXl>
     </div>
   )
