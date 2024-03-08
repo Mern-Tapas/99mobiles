@@ -14,9 +14,9 @@ import DashboardIcon from '@/public/icons/frame-2.svg'
 import ArrowDownIcon from '@/public/icons/arrow-down.svg'
 
 
-interface Props{
-    children:React.ReactNode
-    
+interface Props {
+    children: React.ReactNode
+
 
 }
 
@@ -25,7 +25,7 @@ function MenuButton() {
     const { data: session, status } = useSession()
 
     const [foucs, setFocus] = useState(false)
-    
+
     const blur = () => {
         setTimeout(() => {
             setFocus(false)
@@ -33,7 +33,7 @@ function MenuButton() {
     }
 
     return (
-        <div>
+        <div className='relative'>
             <button onFocus={() => { setFocus(true) }} onBlur={() => { blur() }} className='ms-2 text-xs bg-white flex items-center rounded-full border relative'>
                 <div className='h-[37px] w-[37px] p-1  rounded-full '>
                     <div className="h-full w-full border rounded-full box overflow-hidden">
@@ -55,7 +55,7 @@ function MenuButton() {
                     </div>
                 </div>
             </button>
-            <div className={`${foucs ? "opacity-100 absolute top-9 transition-all pointer-events-auto" : "pointer-events-none opacity-0 top-8 absolute transition-all "}`}>
+            <div className={`right-0 ${foucs ? "opacity-100 absolute top-9 transition-all pointer-events-auto " : "pointer-events-none opacity-0 top-8 absolute transition-all "}`}>
                 <DivPrimary className='w-[210px] p-1 rounded mt-4 shadow-lg'>
                     <Link className='capitalize p-3 block w-full text-xs rounded mb-1 hover:bg-gray-50 text-left flex' href={"user"}>
                         <div className='h-[16px] w-[16px] '>

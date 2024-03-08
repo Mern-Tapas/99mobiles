@@ -11,14 +11,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <AdminContextProvider>
       <div className='h-screen bg-white flex overflow-hidden'>
         <AdminSidebar />
-        <div className='h-full w-full overflow-y-scroll bg-gray-100'>
+        <div className='h-full w-full overflow-y-scroll overflow-x-hidden  bg-gray-100'>
           <AdminTopBar />
 
-          <div className='p2'>
-
-          </div>
-
-          <div className='p-2 px-5'>
+         
+          <div className='p-2 px-5 w-full'>
             {children}
           </div>
         </div>
