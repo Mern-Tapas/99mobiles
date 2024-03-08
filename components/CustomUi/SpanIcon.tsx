@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 interface Props {
     link: string,
@@ -10,17 +9,17 @@ interface Props {
 
 }
 
-function HyperLink({ link, linkName, Icon, className, IconSize }: Props) {
+function SpanIcon({ link, linkName, Icon, className, IconSize }: Props) {
     return (
-        <Link href={link} className={`flex items-center ${className}`}>
+        <span  className={`flex items-center ${className}`}>
             {Icon ?
                 <div className={`h-[${IconSize}px] w-[${IconSize}px]`}>
                     <Icon className="h-full w-full" />
                 </div>
                 : ""}
             <span className='ms-2 capitalize text-xs'>{linkName}</span>
-        </Link>
+        </span>
     )
 }
 
-export default HyperLink
+export default SpanIcon
