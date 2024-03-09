@@ -4,6 +4,7 @@ import './globals.css'
 import ThemeProvider from '@/components/providers/ThemeProvider'
 import Provider from '@/components/providers/SessionProviderDiv'
 import { Toaster } from "@/components/ui/toaster"
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,14 +24,17 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="/splider/splide.min.css" />
         <meta name="google-site-verification" content="RNtnouSMQjBcgTBl-vya7Pn_ffzM2FNRPY_pvt5eix0" />
+        <GoogleAnalytics GA_MEASUREMENT_ID='G-CPF40XLW4B' />
       </head>
       <body className={inter.className}>
         {/* <ThemeProvider attribute='class'> */}
-          <Provider>
-            {children}
-            <Toaster />
-          </Provider>
+        <Provider>
+          {children}
+          <Toaster />
+        </Provider>
         {/* </ThemeProvider> */}
+
+       
       </body>
     </html>
   )
