@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Link from 'next/link'
 
@@ -14,7 +15,7 @@ function HyperLink({ link, linkName, Icon, className, IconSize }: Props) {
     return (
         <Link href={link} className={`flex items-center ${className}`}>
             {Icon ?
-                <div className={`h-[${IconSize}px] w-[${IconSize}px]`}>
+                <div className={`h-[22px] w-[22px]`}>
                     <Icon className="h-full w-full" />
                 </div>
                 : ""}

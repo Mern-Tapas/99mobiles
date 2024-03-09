@@ -1,6 +1,5 @@
 import MaxWScreenXl from '@/components/MaxWScreenXl'
 import React from 'react'
-import Link from 'next/link'
 import FolderIcon from '@/public/icons/folder.svg'
 import HyperLink from '@/components/CustomUi/HyperLink'
 import Post from '@/components/CustomUi/landingPage/Post'
