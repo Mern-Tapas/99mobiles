@@ -37,9 +37,9 @@ export default function RootLayout({
         {/* </ThemeProvider> */}
 
 
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4H4ZMD"
+          height="0" width="0" className='d-none' ></iframe></noscript>
       </body>
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4H4ZMD"
-        height="0" width="0" className='d-none' ></iframe></noscript>
     </html>
   )
 }
