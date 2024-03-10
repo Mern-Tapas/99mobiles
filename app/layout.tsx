@@ -24,7 +24,9 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="/splider/splide.min.css" />
         <meta name="google-site-verification" content="RNtnouSMQjBcgTBl-vya7Pn_ffzM2FNRPY_pvt5eix0" />
-        <GoogleAnalytics GA_MEASUREMENT_ID='G-CPF40XLW4B' />
+        {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-CPF40XLW4B' /> */}
+
+
       </head>
       <body className={inter.className}>
         {/* <ThemeProvider attribute='class'> */}
@@ -34,8 +36,10 @@ export default function RootLayout({
         </Provider>
         {/* </ThemeProvider> */}
 
-       
+
       </body>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4H4ZMD"
+        height="0" width="0" className='d-none' ></iframe></noscript>
     </html>
   )
 }

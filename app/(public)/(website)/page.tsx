@@ -24,14 +24,14 @@ function page() {
             </div>
           </div>
           <div>
-            <h2 className='font-bold text-3xl text-gray-500 mb-6 capitalize'>latest notifications</h2>
+            <h2 className='font-medium text-3xl text-gray-600 mb-6 capitalize'>latest notifications</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
+              <Post postName='RRB Techinician apply online' />
+              <Post postName='SSC SI apply online' />
+              <Post postName='ICG Asst Commandant apply online' />
+              <Post postName='UPSC Civil serivic apply online' />
+              <Post postName='UPSC CGS apply online' />
+              <Post postName='AFCAT apply online' />
             </div>
           </div>
 
