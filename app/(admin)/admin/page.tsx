@@ -3,6 +3,7 @@ import AnalyticsChild from '@/components/CustomUi/admin/AnalyticsChild'
 import DivPrimary from '@/components/DivPrimary'
 import React from 'react'
 import UsersIcon from '@/public/icons/users.svg'
+import GraphIcon from '@/public/icons/graph.svg'
 
 
 function page() {
@@ -15,7 +16,7 @@ function page() {
       <div className=''>
         <div className='grid gap-2 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 '>
 
-          <AnalyticsChild Icon={UsersIcon} Name='Member onsite' Count={168} />
+          <AnalyticsChild Icon={GraphIcon} Name='Member onsite' Count={168} />
           <AnalyticsChild Icon={UsersIcon} Name='Member onsite' Count={89} />
           <AnalyticsChild Icon={UsersIcon} Name='Member onsite' Count={124} />
           <AnalyticsChild Icon={UsersIcon} Name='Member onsite' Count={0} />
