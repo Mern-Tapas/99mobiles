@@ -14,7 +14,7 @@ function layout({ children }: { children: React.ReactNode }) {
                     <HeaderLinks />
                 </div>
 
-                <div className='py-8'>
+                <div className='py-8 min-h-screen'>
                     {children}
                 </div>
                 <div>

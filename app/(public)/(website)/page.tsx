@@ -24,7 +24,7 @@ function page() {
             </div>
           </div>
           <div>
-            <h2 className='font-medium text-3xl text-gray-600 mb-6 uppercase tracking-tight'>latest notifications</h2>
+            <h2 className='font-extrabold text-3xl text-gray-600 mb-6 uppercase tracking-[.5px]'>latest notifications</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Post postName='RRB Techinician apply online' />
               <Post postName='SSC SI apply online' />
@@ -32,7 +32,6 @@ function page() {
               <Post postName='UPSC Civil serivic apply online' />
               <Post postName='UPSC CGS apply online' />
               <Post postName='AFCAT apply online' />
-
             </div>
           </div>
 
