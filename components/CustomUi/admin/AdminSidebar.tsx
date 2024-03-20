@@ -101,7 +101,6 @@ function AdminSidebar() {
             </div>
             <div className="mt-auto">
                 <SidebarLink path={`/admin/settings`} isActive={(currentPath == '/admin/settings') ? true : false} LinkName='Settings' Icon={SettingIcon} />
-                <SidebarLink className={`hover:bg-red-600 bg-red-600`} path={`/settings`} isActive={(currentPath == '/settings') ? true : false} LinkName='Logout' Icon={LogoutIcon} />
             </div>
 
 

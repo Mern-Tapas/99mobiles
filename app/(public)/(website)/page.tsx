@@ -14,12 +14,12 @@ function page() {
         <div className="grid gap-4 lg:grid-cols-[250px_auto]">
           <div className="">
 
-            <HyperLink IconSize={22} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Latest Notification' link='latestnotification' />
-            <HyperLink IconSize={22} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Admit Card' link='latestnotification' />
-            <HyperLink IconSize={22} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Result' link='latestnotification' />
-            <HyperLink IconSize={22} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='syllabus' link='latestnotification' />
-            <HyperLink IconSize={22} className='text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Latest Notification' link='latestnotification' />
-            <div className="rounded-lg bg-white h-[180px] p-2">
+            <HyperLink IconSize={22} className='border text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Latest Notification' link='latestnotification' />
+            <HyperLink IconSize={22} className='border text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Admit Card' link='latestnotification' />
+            <HyperLink IconSize={22} className='border text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Result' link='latestnotification' />
+            <HyperLink IconSize={22} className='border text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='syllabus' link='latestnotification' />
+            <HyperLink IconSize={22} className='border text-slate-700 w-full p-3 block bg-white rounded-lg mb-2 font-medium hover:bg-black transition-colors hover:text-white text-sm' Icon={FolderIcon} linkName='Latest Notification' link='latestnotification' />
+            <div className="border rounded-lg bg-white h-[180px] p-2">
               <span>ad</span>
             </div>
           </div>

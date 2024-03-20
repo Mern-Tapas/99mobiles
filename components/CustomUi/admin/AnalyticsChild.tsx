@@ -10,7 +10,7 @@ interface Props{
 
 function AnalyticsChild({Icon,Name,Count}:Props) {
     return (
-        <div className='h-[130px] bg-white rounded-md bg-gray-50 p-4 relative'>
+        <div className='h-[130px] bg-white rounded-md bg-gray-50 p-4 relative border'>
             <h4 className='mb-2 font-bold text-gray-500 text-xs'>{Name}</h4>
             <h4 className='mb-1 text-4xl font-extrabold'>{Count}</h4>
             <div className='h-[70px] w-[140px] flex absolute bottom-2 right-0'>

@@ -12,7 +12,7 @@ interface Props{
  
 function Post({postName}:Props) {
     return (
-        <Link href={''} className=" grid-child bg-white rounded-lg p-4 flex flex-col hover:border-black border border-2 border-gray-100 transition-all ">
+        <Link href={'post-name'} className=" grid-child bg-white rounded-lg p-4 flex flex-col hover:border-black border border-2 border-gray-100 transition-all ">
             <span className='text-gray-600 text-xs font-extrabold mb-1 inline-block'>SSC</span>
             <h2 className='text-2xl font-bold mb-5'>{postName}</h2>
             <ul  className='flex mt-auto'>

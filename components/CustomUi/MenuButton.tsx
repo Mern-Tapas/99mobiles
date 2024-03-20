@@ -56,7 +56,7 @@ function MenuButton() {
                 </div>
             </button>
             <div className={`right-0 ${foucs ? "opacity-100 absolute top-9 transition-all pointer-events-auto " : "pointer-events-none opacity-0 top-8 absolute transition-all "}`}>
-                <DivPrimary className='w-[210px] p-1 rounded mt-4 shadow-lg'>
+                <DivPrimary className='w-[210px] p-1 rounded mt-4 shadow-lg border'>
                     <Link className='capitalize p-3 block w-full text-xs rounded mb-1 hover:bg-gray-50 text-left flex' href={"user"}>
                         <div className='h-[16px] w-[16px] '>
                             <DashboardIcon className="h-full w-full" />
