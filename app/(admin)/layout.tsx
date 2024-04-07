@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <AdminContextProvider>
       <div className='h-screen bg-white flex overflow-hidden'>
         <AdminSidebar />
-        <div className='h-full w-full overflow-y-scroll overflow-x-hidden  bg-gray-10'>
+        <div className='h-full w-full overflow-y-scroll overflow-x-hidden  bg-gray-50'>
           <AdminTopBar />
 
 

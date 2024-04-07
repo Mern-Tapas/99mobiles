@@ -57,11 +57,11 @@ function AuthOptions({ className }: { className: string }) {
 
 
   useEffect(() => {
-    if (session) {
-      redirect(`/`)
-    } else {
+    // if (session) {
+    //   redirect(`/`)
+    // } else {
 
-    }
+    // }
 
   }, [session])
 
